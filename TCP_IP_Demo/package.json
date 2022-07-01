@@ -1,0 +1,11 @@
+{
+  "name": "tcp_ip_demo",
+  "version": "1.0.0",
+  "description": "TCP IP 3 Way Handshake Demonstration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sajith Lakmal",
+  "license": "ISC"
+}

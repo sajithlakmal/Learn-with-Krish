@@ -1,15 +1,20 @@
-<h1>Order Allocation</h1>
-<form   [formGroup]="loginForm" (ngSubmit)='loginuser()'>
-  
-<input type="text"formControlName="username" placeholder="Octane">
-<br>
-<br>
-<input type="text" formControlName="password" placeholder="Litter ">
-<br>
-<br>
-<input type="submit" value="Submit" onsubmit="window.alert('sometext')">
-</form>
-<div class="h-screen p-16">
+<div class="container" id = "tag">
+    <h1>Order Allocation</h1>
+    <form [formGroup]="loginForm" (ngSubmit)='loginuser()'>
 
-<button class="bg-indigo-300 p-4 rounded-xl"> Click</button>
+        <input type="text" formControlName="octane" placeholder="Octane" class="form-control">
+        <br>
+       
+        <input type="text" formControlName="litter" placeholder="Litter" class="form-control">
+        <br>
+    
+        <input type="submit" value="Submit" onsubmit="window.alert('sometext')" class="btn btn-primary" id = "submitButton" />
+    </form>
+<br>
+    <p>
+        <ngb-alert [type]="success">
+            Order Allocation sucessfully completed.
+        </ngb-alert>
+      </p>
 </div>
+

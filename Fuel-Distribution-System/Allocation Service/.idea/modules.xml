@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Allocation.iml" filepath="$PROJECT_DIR$/.idea/Allocation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Allocation-SpringBoot/Allocation-SpringBoot.iml" filepath="$PROJECT_DIR$/Allocation-SpringBoot/Allocation-SpringBoot.iml" />
-    </modules>
-  </component>
-</project>

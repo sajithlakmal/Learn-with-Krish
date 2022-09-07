@@ -23,22 +23,23 @@ public class Producer {
     public static final String SCHEDULE_TOPIC = "schedule-topic";
     public static final String DISPATCH_TOPIC = "dispatch-topic";
 
+    private NewTopic topic;
    // private  static  final Logger LOGGER =  LoggerFactory.getLogger(Producer.class);
     @Autowired
     private KafkaTemplate<String, Order> kafkaTemplate;
 
     public void publishToAllocation(Order o){
         System.out.println("Publish order to allocation service " + o);
-        kafkaTemplate.send(ALLOCATION_TOPIC, o);
+        Message<Order>message = MessageBuilder.withPayload(o)
+                .setHeader(TOPIC, ALLOCATION_TOPIC)
+                .build();
+        kafkaTemplate.send(message);
 
     }
-
 
     @Bean
     public NewTopic createTopic(){
-
         return new NewTopic(TOPIC,3,(short) 1);
     }
-
 
 }

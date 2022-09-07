@@ -11,8 +11,10 @@ public class Order {
 
     @Id
     private String orderID;
-    private int litter;
     private FuelType fuelType;
+    private Quantity quantity;
+    private String StationId;
+
 
     private boolean allocated;
     private LocalDateTime allocatedTime;

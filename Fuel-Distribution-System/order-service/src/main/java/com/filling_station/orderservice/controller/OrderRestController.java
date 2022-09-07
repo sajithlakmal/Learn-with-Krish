@@ -4,6 +4,7 @@ import com.filling_station.orderservice.model.Order;
 import com.filling_station.orderservice.service.OrderService;
 import com.filling_station.orderservice.service.Producer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,6 +28,7 @@ public class OrderRestController {
     public Order messageToTopic(Order o){
 
         Order order = orderService.addOrder(o);
+
         this.producer.publishToAllocation(order);
         return order;
 

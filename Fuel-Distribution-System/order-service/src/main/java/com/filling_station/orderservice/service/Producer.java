@@ -1,9 +1,7 @@
 package com.filling_station.orderservice.service;
-
 import com.filling_station.orderservice.dto.OrderEvent;
 import com.filling_station.orderservice.model.Order;
 import org.apache.kafka.clients.admin.NewTopic;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +11,7 @@ import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
-
 import static org.springframework.kafka.support.KafkaHeaders.TOPIC;
-
-
 @Service
 public class Producer {
     public static final String ALLOCATION_TOPIC = "allocation-topic";

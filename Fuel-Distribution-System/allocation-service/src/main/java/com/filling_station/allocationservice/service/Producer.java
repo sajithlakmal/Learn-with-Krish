@@ -21,9 +21,9 @@ public class Producer {
     @Autowired
     private KafkaTemplate<String, Order> kafkaTemplate;
 
-    public void publisAllocation(Allocation OrderAllocation){
-        System.out.println("Publish order to Schedule service " + OrderAllocation);
-        Message<Allocation> message = MessageBuilder.withPayload(OrderAllocation)
+    public void publisToSchedule(Order order){
+        System.out.println("Publish order to Schedule service " + order);
+        Message<Order> message = MessageBuilder.withPayload(order)
                 .setHeader(TOPIC, SCHEDULE_TOPIC)
                 .build();
         kafkaTemplate.send(message);

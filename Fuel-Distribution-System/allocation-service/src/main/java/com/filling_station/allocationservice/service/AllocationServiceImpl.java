@@ -130,7 +130,7 @@ public class AllocationServiceImpl implements AllocationService {
 
         order.setAllocated(true);
        orderAllocationRepository.save(newOrder);
-       producer.publisAllocation(newOrder);
+       producer.publisToSchedule(order);
 
         return null;
     }

@@ -7,17 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AllocationController {
+public class AllocationController  {
     @Autowired
     AllocationService allocationService;
     @Autowired
     Producer producer;
 
-    public void Allocation(Order order) {
+    public void allocation(Order order) {
 
         Order result = allocationService.orderAllocation(order);
 
-        if(result.isAllocated()) {
+      /*  if(result.isAllocated()) {
 
             producer.publisAllocation(result);
 
@@ -26,7 +26,7 @@ public class AllocationController {
         else {
             producer.rejectionAllocation(result);
         }
-
+*/
     }
 
     public Stock addStock(int octane92, int octane95, int autoDiesel , int superDiesel) {

@@ -7,6 +7,8 @@ import com.filling_station.orderservice.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Service
@@ -18,7 +20,9 @@ public class OrderServiceImp implements OrderService {
     @Override
     public Order addOrder(Order order) {
         String id = genarateID();
+        LocalDateTime currentDateTime = LocalDateTime.now();
         order.setOrderID(id);
+        order.setOrderedTime(currentDateTime);
         orderRepository.save(order);
         return order;
     }

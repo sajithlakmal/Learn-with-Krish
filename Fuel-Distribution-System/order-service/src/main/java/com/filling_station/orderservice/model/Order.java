@@ -16,6 +16,7 @@ public class Order {
     private String StationId;
 
 
+    private LocalDateTime orderedTime;
     private boolean allocated;
     private LocalDateTime allocatedTime;
     private boolean scheduled;

@@ -58,8 +58,23 @@ public class AllocationServiceImpl implements AllocationService {
     }
     @Override
     public Order orderAllocation(Order order) {
+
+        // Check the stock is Available.
+        Stock lastStoke = lastStockRecord();
+
+    //    boolean allAvailable = checkOrderForAvailability(order, lastStoke);
+
+
+
         return null;
     }
+
+
+    @Override
+    public List<Stock> findAllStockDesc() {
+        return null;
+    }
+
     public Stock lastStockRecord() {
         Stock stock = stockAllocationRepository.findFirstByOrderByDateTimeDesc();
 
@@ -72,8 +87,5 @@ public class AllocationServiceImpl implements AllocationService {
         }
     }
 
-    @Override
-    public List<Stock> findAllStockDesc() {
-        return null;
-    }
+
 }

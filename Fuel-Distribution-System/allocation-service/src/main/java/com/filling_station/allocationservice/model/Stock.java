@@ -2,10 +2,8 @@ package com.filling_station.allocationservice.model;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-
 @Data
 @Document("Stock")
 public class Stock {

@@ -2,7 +2,6 @@ package com.filling_station.orderservice.model;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
 import java.time.LocalDateTime;
 
 @Data
@@ -15,7 +14,6 @@ public class Order {
     private Quantity quantity;
     private String StationId;
 
-
     private LocalDateTime orderedTime;
     private boolean allocated;
     private LocalDateTime allocatedTime;
@@ -25,7 +23,5 @@ public class Order {
     private LocalDateTime dispatchedTime;
     private boolean delivered;
     private LocalDateTime deliveredTime;
-
-
 
 }

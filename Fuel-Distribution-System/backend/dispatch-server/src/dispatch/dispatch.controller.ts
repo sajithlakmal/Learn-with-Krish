@@ -16,12 +16,10 @@ export class DispatchController {
   scheduleListener(@Payload() message) {
     console.log("new message " +JSON.stringify(message))
 
-    message.scheduledDate = this.dispatchService.setDateValues(
-      message.scheduledDate,
-    );
+ 
 
     console.log('Create a Dispatch for ' + JSON.stringify(message));
-    return this.dispatchService.create(message);
+
 
   }
   
@@ -41,14 +39,14 @@ export class DispatchController {
   client: ClientKafka;
 
   async onModuleInit() {
+
     this.client.subscribeToResponseOf('dispatch-topic');
     await this.client.connect();
 
   }
    
-
-
   async updateOrderStatus(id) {
-    this.client.emit('dispatch-topic', id);
+  this.client.emit('dispatch-topic', id);
+
   }
 }

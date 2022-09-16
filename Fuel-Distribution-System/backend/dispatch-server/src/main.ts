@@ -17,13 +17,13 @@ async function bootstrap() {
         brokers: [`${kafkaHost}:${kafkaPort}`],
       },
       consumer: {
-        groupId: 'ceypetco',
+        groupId: 'allocation-group',
       },
     },
   });
   app.enableCors();
   app.use(cors({ origin: 'http://localhost:4200' }));
   await app.startAllMicroservices();
-  await app.listen(8084, () => 'dispatch-service started...');
+  await app.listen(8085, () => 'dispatch-service started...');
 }
 bootstrap();

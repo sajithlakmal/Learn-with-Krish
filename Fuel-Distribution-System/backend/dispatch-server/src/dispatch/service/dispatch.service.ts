@@ -12,8 +12,8 @@ export class DispatchService {
 
         const dispatch = new Dispatch();
 
-        dispatch.orderId = dispatchCreateDto.orderId;
-        dispatch.station = dispatchCreateDto.StationId;
+        dispatch.orderId = dispatchCreateDto.orderID;
+        dispatch.station = dispatchCreateDto.station;
 
        
         dispatch.octane92 = dispatchCreateDto.octane92;
@@ -30,7 +30,7 @@ export class DispatchService {
     
 
 
-
+console.log(dispatchCreateDto)
 
 
     }

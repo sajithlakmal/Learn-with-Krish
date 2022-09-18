@@ -1,20 +1,19 @@
-<app-navigation></app-navigation>
 <div class="container">
-    <form>
+    <form (ngSubmit)="submitOrder()">
         <br>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <select class="form-control" [(ngModel)]="orderModel.fuelType" name="fuelType">
             <option value="petrol">Petrol</option>
             <option value="auto_diesel">Auto diesel</option>
             <option value="supper_diesel">Supper diesel</option>
         </select>
         <br>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <select class="form-control" [(ngModel)]="orderModel.quantity" name="quantity" >
             <option value="petrol">L3300</option>
             <option value="auto_diesel">L6600</option>
             <option value="supper_diesel">L13200</option>
         </select>
         <br>
-        <input type="text" class="form-control" placeholder="Station ID">
+        <input type="text" class="form-control" placeholder="Station ID" [(ngModel)]="orderModel.StationId" name="StationId" >
         <br>
         <button type="submit" class="btn btn-primary">Place an Order</button>
     </form>

@@ -1,7 +1,7 @@
 export class DispatchModel{
   
-    orderId:string
-    StationId: string
+    orderID:string
+    station: string
 
     octane92: boolean;
     quantityOctane92: number;

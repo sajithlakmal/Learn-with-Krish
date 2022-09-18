@@ -12,14 +12,14 @@ export class DispatchController {
     constructor(private dispatchService: DispatchService) {}
   
   //kafka consumer
-  @MessagePattern('allocation-topic') 
+  @MessagePattern('dispatch-topic') 
   scheduleListener(@Payload() message) {
     console.log("new message " +JSON.stringify(message))
 
  
 
     console.log('Create a Dispatch for ' + JSON.stringify(message));
-
+    return this.dispatchService.create(message);
 
   }
   
@@ -27,7 +27,7 @@ export class DispatchController {
     transport: Transport.KAFKA,
     options: {
       client: {
-        clientId: 'allocation-topic',
+        clientId: 'dispatch-topic',
         brokers: [`${kafkaHost}:${kafkaPort}`],
       },
       consumer: {
@@ -41,6 +41,7 @@ export class DispatchController {
   async onModuleInit() {
 
     this.client.subscribeToResponseOf('dispatch-topic');
+    
     await this.client.connect();
 
   }

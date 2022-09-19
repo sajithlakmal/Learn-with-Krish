@@ -5,12 +5,11 @@ import com.filling_station.orderservice.service.OrderService;
 import com.filling_station.orderservice.service.Producer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins = "*")
+
 
 public class OrderRestController {
     private Producer producer;
@@ -25,7 +24,7 @@ public class OrderRestController {
         this.producer = producer;
     }
     @PostMapping("/order")
-    public Order messageToTopic(Order o){
+    public Order messageToTopic( @RequestBody Order o){
 
         Order order = orderService.addOrder(o);
 

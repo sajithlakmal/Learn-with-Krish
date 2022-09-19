@@ -1,20 +1,25 @@
 <div class="container">
     <form (ngSubmit)="submitOrder()">
         <br>
-        <select class="form-control" [(ngModel)]="orderModel.fuelType" name="fuelType">
-            <option value="petrol">Petrol</option>
-            <option value="auto_diesel">Auto diesel</option>
-            <option value="supper_diesel">Supper diesel</option>
+        <select class="form-control" id="fuelType" [(ngModel)]="orderModel.fuelType" name="fuelType">
+            <option value="OCTANE92">OCTANE92</option>
+            <option value="OCTANE95">OCTANE95</option>
+            <option value="AUTO_DIESEL">AUTO_DIESEL</option>
+            <option value="SUPER_DIESEL">SUPER_DIESEL</option>
         </select>
         <br>
-        <select class="form-control" [(ngModel)]="orderModel.quantity" name="quantity" >
-            <option value="petrol">L3300</option>
-            <option value="auto_diesel">L6600</option>
-            <option value="supper_diesel">L13200</option>
+        <select class="form-control" id="quantity" [(ngModel)]="orderModel.quantity" name="quantity"  >
+            <option value="L3300">L3300</option>
+            <option value="L6600">L6600</option>
+            <option value="L13200">L13200</option>
         </select>
         <br>
-        <input type="text" class="form-control" placeholder="Station ID" [(ngModel)]="orderModel.StationId" name="StationId" >
+        <input type="text" class="form-control" id="StationId" placeholder="Station ID" [(ngModel)]="orderModel.StationId" name="StationId" required>
         <br>
         <button type="submit" class="btn btn-primary">Place an Order</button>
     </form>
+<br/>
+    <div class="alert alert-success" role="alert" *ngIf="sucess">
+        sucess {{jsonString}}
+      </div>
 </div>

@@ -6,6 +6,7 @@ import { Dispatch } from '../schemas/dispatch.schema';
 @Injectable()
 export class DispatchService {
 
+  constructor(private dispatchRepository: DispatchRepository) {}
 
    async create(dispatchCreateDto: DispatchModel) {
 
@@ -13,7 +14,7 @@ export class DispatchService {
         const dispatch = new Dispatch();
 
         dispatch.orderId = dispatchCreateDto.orderID;
-        dispatch.station = dispatchCreateDto.station;
+        dispatch.stationId = dispatchCreateDto.stationId;
 
        
         dispatch.octane92 = dispatchCreateDto.octane92;
@@ -28,6 +29,7 @@ export class DispatchService {
         dispatch.superDiesel = dispatchCreateDto.superDiesel;
         dispatch.quantitySuperDiesel = dispatchCreateDto.quantitySuperDiesel;
     
+        return await this.dispatchRepository.create(dispatch);
 
 
 console.log(dispatchCreateDto)

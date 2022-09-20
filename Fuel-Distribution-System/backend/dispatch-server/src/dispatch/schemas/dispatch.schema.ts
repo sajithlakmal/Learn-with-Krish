@@ -9,7 +9,7 @@ export class Dispatch {
   @Prop()
   orderId: string;
   @Prop()
-  station: string;
+  stationId: string;
 
   @Prop()
   octane92: boolean;

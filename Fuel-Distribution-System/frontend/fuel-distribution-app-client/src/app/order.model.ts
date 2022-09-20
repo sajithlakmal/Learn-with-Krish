@@ -4,7 +4,7 @@ import { Quantity } from "./quantity";
 export class OrderModel {
 
   orderID!: string; 
-  StationId!: string;
+  stationId!: string;
   fuelType!: FuelType;
   quantity!: Quantity;
 

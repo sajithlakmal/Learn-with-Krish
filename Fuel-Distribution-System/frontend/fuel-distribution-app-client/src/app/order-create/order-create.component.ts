@@ -19,8 +19,10 @@ export class OrderCreateComponent implements OnInit {
   constructor(private orderService: OrderService) { }
   submitOrder() {
 
+    console.log(this.orderModel);
+
     this.orderService.submitOrder(this.orderModel).subscribe(data => {
-      data.toLocaleString;
+ 
 
      console.log(data)
       this.sucess = true;

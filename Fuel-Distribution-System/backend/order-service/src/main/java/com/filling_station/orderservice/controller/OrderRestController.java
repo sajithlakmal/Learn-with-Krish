@@ -26,6 +26,7 @@ public class OrderRestController {
     @PostMapping("/order")
     public Order messageToTopic( @RequestBody Order o){
 
+        System.out.println(o);
         Order order = orderService.addOrder(o);
 
         this.producer.publishToAllocation(order);

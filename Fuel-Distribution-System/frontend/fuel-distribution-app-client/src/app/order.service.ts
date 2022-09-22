@@ -9,6 +9,8 @@ import { OrderModel } from './order.model';
 export class OrderService {
 
   private url = "http://localhost:8082/order";
+  private searchURL = "http://localhost:8081/services/orders/search";
+
   constructor(private httpClient: HttpClient) { }
 
   submitOrder(order: OrderModel): Observable<Object> {
@@ -17,6 +19,9 @@ export class OrderService {
     console.log(order);
     return this.httpClient.post(`${this.url}`,order);
   
+  }
+  checkOrderById(id: string): Observable<OrderModel[]> {
+    return this.httpClient.get<OrderModel[]>(`${this.searchURL}/${id}`);
   }
 
 }

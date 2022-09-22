@@ -1,4 +1,3 @@
-import { VariableBinding } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { OrderModel } from '../order.model';
 import { OrderService } from '../order.service';
@@ -11,21 +10,18 @@ import { OrderService } from '../order.service';
 
 export class OrderCreateComponent implements OnInit {
 
-  sucess!: boolean;
-
-  jsonString!:any;
   orderModel: OrderModel = new OrderModel();
+  orderDetails: any;
 
   constructor(private orderService: OrderService) { }
-  submitOrder() {
+  async submitOrder() {
 
     console.log(this.orderModel);
 
     this.orderService.submitOrder(this.orderModel).subscribe(data => {
  
-
+    this.orderDetails = data;
      console.log(data)
-      this.sucess = true;
 
     },
     

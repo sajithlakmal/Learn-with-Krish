@@ -1,5 +1,4 @@
 package com.filling_station.orderservice.controller;
-
 import com.filling_station.orderservice.model.Order;
 import com.filling_station.orderservice.service.OrderService;
 import com.filling_station.orderservice.service.Producer;
@@ -10,13 +9,11 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @CrossOrigin(origins = "*")
 
-
 public class OrderRestController {
     private Producer producer;
 
     @Autowired
     OrderService orderService;
-
 
     @Autowired
     public void TestController(Producer producer) {
@@ -33,10 +30,6 @@ public class OrderRestController {
         return order;
 
     }
-
-
-
-
 
 
 

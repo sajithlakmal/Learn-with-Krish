@@ -9,14 +9,11 @@ import { OrderModel } from '../order.model';
 export class OrderCreateComponent implements OnInit {
   orderModel:OrderModel = new OrderModel();
 
-
   constructor() { }
 
   submitOrder(){
     console.log(this.orderModel);
   }
-
-
 
   ngOnInit(): void {
   }

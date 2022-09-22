@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -25,6 +26,16 @@ public class OrderServiceImp implements OrderService {
         order.setOrderedTime(currentDateTime);
         orderRepository.save(order);
         return order;
+    }
+
+    public Order getOrder(String id) {
+        Optional<Order> order = orderRepository.findById(id);
+
+        if(order.isPresent()) {
+            return order.get();
+        }
+        return null;
+
     }
 
     private String  genarateID(){

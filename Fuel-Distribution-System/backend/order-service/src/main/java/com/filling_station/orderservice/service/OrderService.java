@@ -5,5 +5,7 @@ import org.springframework.stereotype.Service;
 
 public interface OrderService {
     Order addOrder(Order order);
+    Order getOrder(String id);
+
 
 }

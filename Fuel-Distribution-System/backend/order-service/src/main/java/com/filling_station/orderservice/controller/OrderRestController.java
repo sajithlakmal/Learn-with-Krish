@@ -30,7 +30,11 @@ public class OrderRestController {
         return order;
 
     }
-
+    @GetMapping("/orders/{id}")
+    public Order getOrder(@PathVariable String id) {
+        Order order = orderService.getOrder(id);
+        return order;
+    }
 
 
 }

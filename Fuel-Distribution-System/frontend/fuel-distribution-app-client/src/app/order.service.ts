@@ -9,7 +9,7 @@ import { OrderModel } from './order.model';
 export class OrderService {
 
   private url = "http://localhost:8082/order";
-  private searchURL = "http://localhost:8081/services/orders/search";
+  private searchURL = "http://localhost:8082/orders";
 
   constructor(private httpClient: HttpClient) { }
 

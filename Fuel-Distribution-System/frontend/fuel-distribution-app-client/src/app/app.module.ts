@@ -6,11 +6,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OrderCreateComponent } from './order-create/order-create.component';
+import { OrderSearchComponent } from './order-search/order-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OrderCreateComponent,
+    OrderSearchComponent
+    
     
     
   ],
@@ -18,7 +21,8 @@ import { OrderCreateComponent } from './order-create/order-create.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

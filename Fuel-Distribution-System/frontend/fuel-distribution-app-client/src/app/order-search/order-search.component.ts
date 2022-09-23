@@ -20,6 +20,7 @@ export class OrderSearchComponent implements OnInit {
   ngOnInit(): void {
   }
   checkOrderById() {
+    console.log(this.orderId);
     this.orderService.checkOrderById(this.orderId).subscribe(data => {
       this.orderDetails = data;
       console.log(data);

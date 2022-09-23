@@ -1,29 +1,36 @@
 <div class="container">
-    <form (ngSubmit)="checkOrderById">
+   
+  <form (ngSubmit)="checkOrderById()">
+
     
-    
-        <input type="text" class="form-control" id="StationId" placeholder="Station ID" [(ngModel)]="orderId">
-        <br>
-        <button type="submit" class="btn btn-primary">Search</button>
-    </form>
-<br/>
-    <div class="alert alert-success" role="alert">
-      </div>
+    <input type="text" class="form-control" id="StationId" placeholder="Station ID" [(ngModel)]="orderId" name="StationId">
+    <br>
+    <button type="submit" class="btn btn-primary">Place an Order</button>
+</form>
+
+
+
+
+
+
+
+
+
 </div>
-<table class="table">
+<table class="table" *ngIf="orderDetails">
     <thead>
       <tr>
         <th scope="col">Order Id</th>
-        <th scope="col">Gas Station Id</th>
+        <th scope="col">Station Id</th>
         <th scope="col">Fuel Type</th>
-        <th scope="col">Quantity</th>
+        <th scope="col">Quantity </th>
         <th scope="col">Order Reserved</th>
         <th scope="col">Reserved Time</th>
         <th scope="col">Order Scheduled</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngIf="orderDetails">
+      <tr >
         <td>{{this.orderDetails.id}}</td>
         <td>{{this.orderDetails.stationId}}</td>
         <td>{{this.orderDetails.fuelType}}</td>

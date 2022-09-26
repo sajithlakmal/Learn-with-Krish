@@ -3,8 +3,9 @@ import com.filling_station.orderservice.model.Order;
 import com.filling_station.orderservice.service.OrderService;
 import com.filling_station.orderservice.service.Producer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -36,5 +37,15 @@ public class OrderRestController {
         return order;
     }
 
+
+    @RequestMapping(value = "/orders", method = RequestMethod.GET)
+    public Object fetch() {
+        List<Order> orders = orderService.viewAllOrders();
+        if (orders == null) {
+            return "Order list is empty.";
+        } else {
+            return orders;
+        }
+    }
 
 }

@@ -10,5 +10,4 @@ public interface AllocationService {
     Order orderAllocation(Order order);
     List<Stock> findAllStockDesc();
 
-
 }

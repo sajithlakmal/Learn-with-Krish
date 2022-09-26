@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -35,6 +36,13 @@ public class OrderServiceImp implements OrderService {
             return order.get();
         }
         return null;
+
+    }
+
+    @Override
+    public List<Order> viewAllOrders(){
+        List<Order> orders = orderRepository.findAll();
+        return orders;
 
     }
 

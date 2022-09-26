@@ -5,18 +5,12 @@
     
     <input type="text" class="form-control" id="StationId" placeholder="Station ID" [(ngModel)]="orderId" name="StationId">
     <br>
-    <button type="submit" class="btn btn-primary">Place an Order</button>
+    <button type="submit" class="btn btn-primary">Search</button>
 </form>
 
-
-
-
-
-
-
-
-
 </div>
+<div class="container">
+
 <table class="table" *ngIf="orderDetails">
     <thead>
       <tr>
@@ -26,18 +20,18 @@
         <th scope="col">Quantity </th>
         <th scope="col">Order Reserved</th>
         <th scope="col">Reserved Time</th>
-        <th scope="col">Order Scheduled</th>
+        <th scope="col">Scheduled Time</th>
       </tr>
     </thead>
     <tbody>
       <tr >
-        <td>{{this.orderDetails.id}}</td>
+        <td>{{this.orderDetails.orderID}}</td>
         <td>{{this.orderDetails.stationId}}</td>
         <td>{{this.orderDetails.fuelType}}</td>
         <td>{{this.orderDetails.quantity}}</td>
-        <td>{{this.orderDetails.reserved}}</td>
-        <td>{{this.orderDetails.reservedTime}}</td>
-        <td>{{this.orderDetails.scheduled}}</td>
+        <td>{{this.orderDetails.allocated}}</td>
+        <td>{{this.orderDetails.allocatedTime}}</td>
+        <td>{{this.orderDetails.scheduledTime}}</td>
       </tr>
     </tbody>
-  </table>
+  </table></div>

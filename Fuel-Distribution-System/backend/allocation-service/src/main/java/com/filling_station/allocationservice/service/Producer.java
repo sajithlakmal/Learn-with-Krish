@@ -13,7 +13,8 @@ import static org.springframework.kafka.support.KafkaHeaders.TOPIC;
 
 @Service
 public class Producer {
-    public static final String SCHEDULE_TOPIC = "schedule-topic";
+    public static final String SCHEDULE_TOPIC = "allocation-complete-topic";
+
 
 
     private NewTopic topic;

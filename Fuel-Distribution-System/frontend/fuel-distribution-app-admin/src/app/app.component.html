@@ -1,21 +1,15 @@
-<app-navigation></app-navigation>
-<div class="container">
-    <form>
-        <br>
-        <select class="form-control" >
-            <option value="petrol">Petrol</option>
-            <option value="auto_diesel">Auto diesel</option>
-            <option value="supper_diesel">Supper diesel</option>
-        </select>
-        <br>
-        <select class="form-control">
-            <option value="petrol">L3300</option>
-            <option value="auto_diesel">L6600</option>
-            <option value="supper_diesel">L13200</option>
-        </select>
-        <br>
-        <input type="text" class="form-control" placeholder="Station ID">
-        <br>
-        <button type="submit" class="btn btn-primary">Place an Order</button>
-    </form>
-</div>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="order-list" routerLinkActive="active">Order List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="dispatch-order" routerLinkActive="active">Dispatch Order</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>

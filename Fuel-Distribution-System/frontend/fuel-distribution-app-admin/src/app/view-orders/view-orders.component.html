@@ -1,0 +1,30 @@
+<div class="container">
+
+  
+  </div>
+  <div class="container">
+  
+  <table class="table" *ngFor="let order of dispatches" >
+      <thead>
+        <tr>
+          <th scope="col">Order Id</th>
+          <th scope="col">Station Id</th>
+          <th scope="col">Fuel Type</th>
+          <th scope="col">Quantity </th>
+          <th scope="col">Order Reserved</th>
+          <th scope="col">Reserved Time</th>
+          <th scope="col">Scheduled Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr >
+          <td>{{this.order.orderID}}</td>
+          <td>{{this.order.stationId}}</td>
+          <td>{{this.order.fuelType}}</td>
+          <td>{{this.order.quantity}}</td>
+          <td>{{this.order.allocated}}</td>
+          <td>{{this.order.allocatedTime}}</td>
+          <td>{{this.order.scheduledTime}}</td>
+        </tr>
+      </tbody>
+    </table></div>

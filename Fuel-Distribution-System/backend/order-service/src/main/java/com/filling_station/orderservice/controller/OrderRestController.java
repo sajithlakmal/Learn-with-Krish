@@ -29,15 +29,13 @@ public class OrderRestController {
 
         this.producer.publishToAllocation(order);
         return order;
-
     }
+
     @GetMapping("/orders/{id}")
     public Order getOrder(@PathVariable String id) {
         Order order = orderService.getOrder(id);
         return order;
     }
-
-
     @RequestMapping(value = "/orders", method = RequestMethod.GET)
     public Object fetch() {
         List<Order> orders = orderService.viewAllOrders();
@@ -46,6 +44,23 @@ public class OrderRestController {
         } else {
             return orders;
         }
+    }
+
+    public void allocationComplete(Order order){
+        Order allocatedOrder  = orderService.changeAllocationStatus(order);
+        producer.publishToSchedule(allocatedOrder);
+
+    }
+
+    public void addScheduledDate(Order order) {
+        Order scheduleOrder  = orderService.addScheduledDate(order);
+        producer.publishToDispatch(scheduleOrder);
+
+    }
+    public void changeDispatchStatus(String orderId) {
+        Order order = orderService.changeDispatchStatus(orderId);
+        producer.publishToDispatch(order);
+
     }
 
 }

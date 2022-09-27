@@ -13,6 +13,7 @@ public class Order {
     private FuelType fuelType;
     private Quantity quantity;
     private String stationId;
+    private String status;
 
     private LocalDateTime orderedTime;
     private boolean allocated;

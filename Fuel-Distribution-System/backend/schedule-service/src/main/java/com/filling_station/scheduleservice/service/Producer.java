@@ -14,7 +14,7 @@ import static org.springframework.kafka.support.KafkaHeaders.TOPIC;
 @Service
 public class Producer {
 
-    public static final String DISPATCH_TOPIC = "dispatch-topic";
+    public static final String DISPATCH_TOPIC = "scheduled-complete-topic";
 
 
     @Autowired

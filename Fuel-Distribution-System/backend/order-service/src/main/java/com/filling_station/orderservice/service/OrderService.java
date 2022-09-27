@@ -10,5 +10,7 @@ public interface OrderService {
     Order getOrder(String id);
 
     List<Order> viewAllOrders();
-
+   Order changeDispatchStatus(String orderId);
+   Order addScheduledDate(Order order);
+   Order changeAllocationStatus(Order order);
 }

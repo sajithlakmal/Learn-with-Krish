@@ -32,11 +32,9 @@ export class DispatchService {
         return await this.dispatchRepository.create(dispatch);
 
 
-console.log(dispatchCreateDto)
-
-
     }
     setDateValues(scheduledDate: any): any {
         throw new Error('Method not implemented.');
+        
     }
 }

@@ -13,7 +13,7 @@ public class Consumer {
     ScheduleController scheduleController;
 
 
-    @KafkaListener(topics = "schedule-topic", groupId = "allocation-group")
+    @KafkaListener(topics = "schedule-topic", groupId = "schedule-group")
 
     public void listenAllocationTopic(Order order) {
         System.out.println("Listen to allocation topic in AllocationService from OrderService " + order);

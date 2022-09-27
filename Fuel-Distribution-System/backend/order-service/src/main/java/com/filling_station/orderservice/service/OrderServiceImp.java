@@ -32,7 +32,7 @@ public class OrderServiceImp implements OrderService {
     public Order getOrder(String id) {
         Optional<Order> order = orderRepository.findById(id);
 
-        if(order.isPresent()) {
+        if (order.isPresent()) {
             return order.get();
         }
         return null;
@@ -40,15 +40,46 @@ public class OrderServiceImp implements OrderService {
     }
 
     @Override
-    public List<Order> viewAllOrders(){
+    public List<Order> viewAllOrders() {
         List<Order> orders = orderRepository.findAll();
         return orders;
 
     }
 
-    private String  genarateID(){
+    private String genarateID() {
         UUID uuid = UUID.randomUUID();
         return uuid.toString();
+    }
+
+    @Override
+    public Order changeDispatchStatus(String orderId) {
+
+        Optional<Order> order = orderRepository.findById(orderId);
+
+        if (order.isPresent()) {
+            LocalDateTime currentDateTime = LocalDateTime.now();
+            Order dispatchedOrder = order.get();
+            dispatchedOrder.setDispatchedTime(currentDateTime);
+            dispatchedOrder.setDispatched(true);
+            orderRepository.save(dispatchedOrder);
+            return order.get();
+        }
+
+        return null;
+
+    }
+
+    @Override
+    public Order addScheduledDate(Order order) {
+        orderRepository.save(order);
+
+        return order;
+    }
+
+    @Override
+    public Order changeAllocationStatus(Order order) {
+        orderRepository.save(order);
+        return order;
     }
 
 }

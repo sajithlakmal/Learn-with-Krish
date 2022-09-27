@@ -22,6 +22,8 @@ public class AllocationServiceImpl implements AllocationService {
     @Autowired
     OrderAllocationRepository orderAllocationRepository;
 
+
+
     @Autowired
     Producer producer;
 
@@ -131,6 +133,7 @@ public class AllocationServiceImpl implements AllocationService {
         order.setAllocated(true);
        orderAllocationRepository.save(newOrder);
        producer.publisToSchedule(order);
+        System.out.println("Order details "+order);
 
         return null;
     }

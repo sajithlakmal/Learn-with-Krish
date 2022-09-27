@@ -31,7 +31,7 @@ export class DispatchController {
         brokers: [`${kafkaHost}:${kafkaPort}`],
       },
       consumer: {
-        groupId: 'allocation-group',
+        groupId: 'dispatch-group',
       },
     },
   })

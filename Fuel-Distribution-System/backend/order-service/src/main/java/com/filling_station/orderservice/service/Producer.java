@@ -32,6 +32,26 @@ public class Producer {
 
     }
 
+    public void publishToSchedule(Order o){
+        System.out.println("Publish order to allocation service " + o);
+        Message<Order>message = MessageBuilder.withPayload(o)
+                .setHeader(TOPIC, SCHEDULE_TOPIC)
+                .build();
+        kafkaTemplate.send(message);
+
+    }
+
+
+    public void publishToDispatch(Order o){
+        System.out.println("Publish order to allocation service " + o);
+        Message<Order>message = MessageBuilder.withPayload(o)
+                .setHeader(TOPIC, DISPATCH_TOPIC)
+                .build();
+        kafkaTemplate.send(message);
+
+    }
+
+
     @Bean
     public NewTopic createTopic(){
         return new NewTopic(TOPIC,3,(short) 1);
